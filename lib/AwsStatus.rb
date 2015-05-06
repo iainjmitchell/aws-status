@@ -9,6 +9,12 @@ class AwsStatus
 	end
 
 	def self.create
-		AwsStatus.new(HTTParty)
+		AwsStatus.new(RestClient)
+	end
+end
+
+class RestClient
+	def self.get(uri)
+		HTTParty.get(uri).to_s
 	end
 end

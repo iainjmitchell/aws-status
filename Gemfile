@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'httparty'
+gem 'simple-rss'
 
 group :development do
 	gem 'rake'

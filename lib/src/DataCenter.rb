@@ -1,3 +1,5 @@
+require_relative 'ServiceStatusResponse'
+
 class DataCenter
 	require_relative 'Services'
 
@@ -17,6 +19,8 @@ class DataCenter
 	private
 
 	def status_for(component)
-		@rest_client.get("#{AWS_STATUS_RSS_ROOT}/#{component}-#{@location}.rss")
+		feedHtml = @rest_client.get("#{AWS_STATUS_RSS_ROOT}/#{component}-#{@location}.rss")
+		ServiceStatusResponse.create(feedHtml)	
 	end
 end
+

@@ -106,6 +106,7 @@ class ConnectToCorrectRssFeedTests < Test::Unit::TestCase
 	
 	def get(uri)
 		@uri = uri
+		nil
 	end
 end
 
