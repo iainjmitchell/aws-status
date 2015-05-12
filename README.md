@@ -1,4 +1,4 @@
-# aws-status
+# aws_status
 A Gem that attempts to extract current status from amazon aws
 
 ##Introduction
@@ -11,16 +11,16 @@ NOTE: recent downtimes suggest that when an issue occurs Amazon are very slow at
 
 The package is installed on rubygems and can be installed using the following command
 
-    gem install 'aws-status'
+    gem install 'aws_status'
 
 or adding the following to your Gemfile
     
-    gem 'aws-status'
+    gem 'aws_status'
 
 ##Usage
 
 ```ruby
-	require 'aws-status'
+	require 'aws_status'
 
 	# AwsStatus.create.status.[data_center].[service_name]
 	current_status = AwsStatus.create 
