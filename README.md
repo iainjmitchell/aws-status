@@ -37,3 +37,7 @@ or adding the following to your Gemfile
 ##Supported Services
 
 See [this](lib/src/Services.rb) file for a list of services that are supported
+
+##Missing functionality
+
+Some services are not hosted at individual data centers (e.g. route 53), so at the moment the status of these cannot be retrieved by this gem.
