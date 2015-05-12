@@ -30,7 +30,7 @@ end
 
 task :gem_publish do 
 	`rm *.gem`
-	`gem build aws-status.gemspec`
+	`gem build aws_status.gemspec`
 	gem_files = FileList.new('*.gem')
 	result = `gem push #{gem_files[0]}`
 	puts result
