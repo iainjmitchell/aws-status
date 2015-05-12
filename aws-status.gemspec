@@ -8,4 +8,5 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://github.com/iainjmitchell/aws-status'
   spec.license       = 'MIT'
   spec.add_runtime_dependency 'httparty' 
+  spec.add_runtime_dependency 'simple-rss' 
 end

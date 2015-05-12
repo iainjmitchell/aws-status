@@ -1,4 +1,5 @@
 require 'simple-rss'
+require_relative './OperatingNormallySpecification'
 
 class ServiceStatusResponse
 	attr_reader :message, :state
@@ -9,20 +10,25 @@ class ServiceStatusResponse
 	end
 
 	def self.create(feedHtml)
-		if feedHtml.nil?
-			NoServiceStatusResponse.new 
-		else
-			rssFeed = SimpleRSS.parse(feedHtml)
-			rssFeed.items.empty? ? 
-				NoServiceEventsResponse.new : 
-				ServiceStatusResponse.new(rssFeed.items.first[:title], :error)
-		end 
+		return NoServiceStatusResponse.new if feedHtml.nil?
+		rssFeed = SimpleRSS.parse(feedHtml)
+		if OperatingNormallySpecification.is_satisified_by? rssFeed.items
+			ServiceOkayResponse.new
+		else 
+			ServiceErrorResponse.new(rssFeed.items.first[:title])
+		end
 	end
 end
 
-class NoServiceEventsResponse < ServiceStatusResponse
+class ServiceOkayResponse < ServiceStatusResponse
 	def initialize
 		super(message='Service Operating Normally', state=:okay)
+	end
+end
+
+class ServiceErrorResponse < ServiceStatusResponse
+	def initialize(message)
+		super(message, state=:error)
 	end
 end
 
