@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'rspec/expectations'
-require_relative '../lib/AwsStatus'
+require_relative '../lib/aws_status'
 
 class ConnectToCorrectRssFeedTests < Test::Unit::TestCase
 	include RSpec::Matchers
