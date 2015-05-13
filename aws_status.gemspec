@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = 'aws_status'
-  spec.version     = '1.0.1'
+  spec.version     = '1.0.2'
   spec.summary     = "Retrieve status of aws services"
   spec.authors     = ["iainjmitchell"]
   spec.email       = 'iainjmitchell@gmail.com'
