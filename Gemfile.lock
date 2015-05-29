@@ -28,3 +28,6 @@ DEPENDENCIES
   rake
   rspec-expectations
   simple-rss
+
+BUNDLED WITH
+   1.10.1

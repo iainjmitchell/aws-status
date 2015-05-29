@@ -9,11 +9,11 @@ class AwsStatus
 	end
 
 	def self.create
-		AwsStatus.new(RestClient)
+		AwsStatus.new(AwsRestClient)
 	end
 end
 
-class RestClient
+class AwsRestClient
 	def self.get(uri)
 		HTTParty.get(uri).to_s
 	end
